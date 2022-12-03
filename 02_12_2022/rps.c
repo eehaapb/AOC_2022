@@ -6,14 +6,14 @@ int calculate_score(char opponent_selection, char player_selection) {
 
     if (opponent_selection == 'A') {
         if (player_selection == 'Z') {
-            return LOSE + SCISSORS;
+            return WIN + PAPER;
         }
 
         if (player_selection == 'X') {
-            return TIE + ROCK;
+            return LOSE + SCISSORS;
         }
 
-        return WIN + PAPER;
+        return TIE + ROCK;
     }
 
     if (opponent_selection == 'B') {
@@ -30,14 +30,14 @@ int calculate_score(char opponent_selection, char player_selection) {
 
     if (opponent_selection == 'C') {
         if (player_selection == 'Y') {
-            return LOSE + PAPER;
-        }
-
-        if (player_selection == 'Z') {
             return TIE + SCISSORS;
         }
 
-        return WIN + ROCK;
+        if (player_selection == 'Z') {
+            return WIN + ROCK;
+        }
+
+        return LOSE + PAPER;
     }
 
     return 0;
